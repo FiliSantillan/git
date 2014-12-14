@@ -1,3 +1,11 @@
+@import 'nib/vendor'
+
+azulito = #4393fa
+grisesito = #2c2c2c
+azulito_claro = #68a6ef
+moradito = #9500b5
+moradito_claro = #a839b5
+
 header
 	background rgba(black,0.8)
 	color white
@@ -42,6 +50,96 @@ header
 			top 4.2em
 			right 0.5em
 			
+.idea
+	figure
+		img
+			width 500px
+			
+.yo
+	.f_yo
+		img
+			width 250px
+			border-radius 50%
+			border 4px solid grisesito
+			
+	.social_icons
+		width 392px
+		position relative
+		margin 0 auto
+		figure
+			img
+				width 80px
+				float left
+				margin-right 0.5em
+				opacity .8
+				animation 1s parpadeo infinite
+			
+
+ .abajo
+	background azulito
+	padding 0.2em
+	display inline-block
+	border 4px solid grisesito
+	animation 1s parpadeo infinite
+	color white
+	
+.antes
+	a
+		display inline-block
+		
+	.curso_git
+		background moradito_claro
+		padding 0.3em
+		color black !important
+		border-radius 5px
+		transition .3s !important
+		
+		&:hover
+			background moradito
+		
+	.navidad
+		background azulito_claro
+		color black !important
+		margin-top 0.5em
+		padding 0.3em
+		border-radius 5px
+		transition .3s !important
+		
+		&:hover
+			background azulito
+			
+.clases
+	h2
+		color white
+		padding 0.5em !important
+		border 4px solid white !important
+		border-radius 10px
+		
+	.proceso
+		background #fad542
+		
+.arbol
+	.working_div
+		position relative
+		margin 0 auto
+		width 804px
+		figure
+			img
+				width 250px
+				float left
+				margin-right 0.5em
+			
+.config
+	.f_user_name
+		img
+			width 300px
+@keyframes parpadeo
+	40%
+		transform scale(1.1)
+		
+	20% 60%
+		transform scale(0.8)
+		
 
 @media screen and (min-width: 767px)
 	.share
