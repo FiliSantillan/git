@@ -25,7 +25,6 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333333;
   font-family: "Quicksand", sans-serif;
   line-height: 0.9em;
   letter-spacing: -0.08em;
@@ -33,7 +32,8 @@ body {
   text-shadow: none; }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .reveal h1,
@@ -42,7 +42,7 @@ body {
 }
 
 .reveal a:not(.image) {
-  color: #3b759e;
+  color: #4393fa;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
