@@ -172,7 +172,7 @@
 					<section class="arbol">
 						<h3>Repository</h3>
 						<figure class="staging">
-							<img src="img/repository.png" alt="staging area dragon ball">
+							<img src="img/repo.png" alt="staging area dragon ball">
 						</figure>
 					</section>
 					<section class="arbol">
@@ -197,7 +197,7 @@
 					<section class="config">
 						<h3>git config --global user.name "Tu nombre"</h3>
 						<figure class="f_user_name">
-							<img src="img/goku_bebe.png" alt="git user.name dragon ball">
+							<img src="img/goku_bb.png" alt="git user.name dragon ball">
 						</figure>
 						<strong>Kakaroto</strong>
 					</section>
@@ -534,7 +534,214 @@
 				<section class="clases" data-background="#4393fa">
 					<h2>Clase 3</h2>
 					<h3>Workflows y Colaboración Remota</h3>
-					<p class="proceso" >Lista el 16 / Diciembre - 9:00pm Hora México</p>
+				</section>
+				<section>
+					<section class="github">
+						<h2>GitHub</h2>
+					</section>
+					<section class="github">
+						<h3>Qué es?</h3>
+						<p>Github es una comunidad o plataforma donde podemos almacenar nuestros proyectos, utiliza <strong>Git</strong> para su gestión.</p>
+						<p>Cada vez son más las personas que estan esta gran comunidad, la mayoria de ellas estan por el ámbito web, pero sin duda hay proyectos totalmente distintos.</p>
+						<p>Github además lleva un historial de tu código, guarda cada nuevo cambio que haces.</p>
+					</section>
+					<section class="github">
+						<h3><strong>Git</strong> no es lo mismo que <strong>Github</strong></h3>
+						<figure class="f_github">
+							<img src="img/no_igual.png" alt="github es diferente a git">
+						</figure>
+					</section>
+					<section class="gihub">
+						<h3>Github se basa en tres áreas</h3>
+						<ul>
+							<li><strong>Colaboración: </strong> Gente que pone de su parte y abre sus ideas al mundo, no viven en el mundo de ¡Si lo pongo en Github, me lo roban!</li>
+							<li><strong>Creación: </strong> Si tienes proyectos, empresas, startups.</li>
+							<li><strong>Conexión: </strong> Conectas con el mundo profesional y tienes más probabilidades de ser contratado por tu portafolio.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section class="workflows">
+						<h2>Workflows</h2>
+					</section>
+					<section class="workflows">
+						<h3>Qué es?</h3>
+						<p>Son flujos de trabajo colaborativos.</p>
+						<p>Lograr trabajar con varios profesionales sobre el mismo proyecto sin morir en el intento.</p>
+						<p>Es la manera de como logras integrar todo tu equipo para que se alcance un proyecto completo.</p>
+						<figure class="f_team">
+							<img src="img/team.png" alt="team github">
+						</figure>
+					</section>
+					<section class="workflows">
+						<h3>Exploración: Git Clone</h3>
+						<figure class="f_clon">
+							<img src="img/clon.png" alt="cooler clon github">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Cuando clonas proyectos, es cuando no te interesa colaborar, solo quieres ver el proyecto y tenerlo en la computadora</p>
+						<p>Se basan en dos comandos:</p>
+						<p><strong>git clone <em>[https]</em></strong></p>
+						<p><strong>git clone <em>[SSH]</em></strong></p>
+					</section>
+					<section class="workflows">
+						<p>Solo tenemos que ir al proyecto que necesitamos, y justo a la derecha tenemos el https para clonar</p>
+						<figure class="https">
+							<img src="img/https.png" alt="https github">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Ya que estamos en la carpeta donde queremos tener el proyecto usamos el comando:</p>
+						<p><strong>git clone <em>[https]</em></strong></p>
+						<figure class="git_clone">
+							<img src="img/git_clone.png" alt="">
+						</figure>
+					</section>
+					<section class="workflows">
+						<h3>Github Workflows están divididos en tres áreas:</h3>
+						<ol>
+							<li>Proyectos propios.</li>
+							<li>Proyectos propios (Yo + Equipo).</li>
+							<li>Proyectos con terceros.</li>
+						</ol>
+					</section>
+					<section class="workflows">
+						<h3>1) Proyectos Propios</h3>
+					</section>
+					<section class="workflows">
+						<p>Somos los dueños, si alguien decide participar nostros decidimos si aceptamos las propuestas o no, y regularmente se usan para guardar proyectos personales.</p>
+						<figure class="f_propio">
+							<img src="img/goku.png" alt="">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Empezamos por crear un repositorio Local y Remoto.</p>
+						<p>Es decir crear un repositorio en nuestra computadora y otro en Github.</p>
+						<p>Ya que hicimos esto, Github no sabe que existe nuestra computadora, y nuestra computadora no sabe que existe Github.</p>
+						<p>Es cuando usamos:</p>
+						<p><strong>git remote</strong></p>
+					</section>
+					<section class="workflows">
+						<p><strong>git remote</strong></p>
+						<p>Lo que hace es vincular nuestro repositorio local <strong>(Computadora)</strong> con nuestro repositorio remoto <strong>(Github).</strong></p>
+						<figure class="f_remote">
+							<img src="img/remote.png" alt="remote github goku">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Ejecutamos el comando:</p>
+						<p><strong>git remote add origin <em>Repositorio de github</em></strong></p>
+						<p>De esta forma se vinculan y se conocen.</p>
+						<p>Para saber nuestros enlaces que hacemos via repositorio:</p>
+						<p><strong>git remote <em>-v</em></strong></p>
+					</section>
+					<section class="workflows">
+						<p>Finalmente ahora ya que trabajamos, hay que mandar esos cambios al repositorio de github</p>
+						<p><strong>git push origin <em>master</em></strong></p>
+						<p><strong><em>master</em></strong> -> Es la rama que mandaremos a github, obviamente podemos poner cualquier rama.</p>
+					</section>
+					<section class="workflows">
+						<h3>2) Proyectos propios (Yo + Equipo)</h3>
+					</section>
+					<section class="workflows">
+						<p>Es lo mismo que el proceso anterior, pero todos los cambios que hagan los colaboradores, podran hacerlos sin preguntar.</p>
+						<p>Ya no solo eres tú, si no que ya habrá alguien más.</p>
+						<p>Los colaboradores no piden permiso, suben cambios y se acabo.</p>
+						<figure class="team_g_v">
+							<img src="img/g_v.png" alt="team goku and vegeta">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Esto se explica a través de un proceso llamado:</p>
+						<p><strong>git fetch & git merge</strong></p>
+						<p>Cuando nosotros generamos un enlace remoto con un repositorio, hay una rama escondida llamada: <strong>origin/master</strong> y lo que haces es espejear el repositorio de github a tú área local.</p>
+					</section>
+					<section class="workflows">
+						<p><strong>git fetch</strong></p>
+						<p>Lo que hace git fetch es espejear nuestro <strong>repositorio remoto</strong> con nuestro <strong>origin/master</strong> </p>
+						<figure class="fetch">
+							<img src="img/fetch.png" alt="git fetch dragon ball">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Entonces para sincronizarnos usamos:</p>
+						<p><strong>git fetch <em>origin</em></strong></p>
+						<p>Ahora lo que tenemos en remoto ya esta en la línea <strong>origin/master</strong></p>
+					</section>
+					<section class="workflows">
+						<p>Pero que pasa si yo creo commit totalmente  distinto a lo que hay en origin/master ?</p>
+						<figure class="fetch">
+							<img src="img/fetch2.png" alt="git fetch dragon ball">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p><strong>git merge</strong></p>
+						<p>Ahora que tenemos dos commits totalmente distintos, llego la hora de fusionarlos y así crear un nuevo commit.</p>
+						<figure class="merge">
+							<img src="img/merge.png" alt="git merge gogeta">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Para esto solo tenemos que estar en la rama principal y ejecutar:</p>
+						<p><strong>git merge <em>origin/master</em></strong></p>
+					</section>
+					<section class="workflows">
+						<p><strong>git push</strong></p>
+						<p>Finalmente ya que tenemos la fusión, ahora lo pasamos al <strong>repositorio remoto</strong></p>
+						<figure class="push">
+							<img src="img/push.png" alt="git push gogeta">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Solo usamos el comando visto en el primer workflow.</p>
+						<p><strong>git push <em>origin master</em></strong></p>
+					</section>
+					<section class="workflows">
+						<h3>3) Proyectos con terceros</h3>
+					</section>
+					<section class="workflows">
+						<p>Nosotros no somos dueños pero queremos participar en el desarrollo.</p>
+						<p>Todo dentro de un concepto de pull Request (PR).</p>
+						<p>Este tipo de repositorios trabajan bajo dos esquemas.</p>
+						<p>Necesitamos conectar dos repositorios porque cuando hacemos un <strong>fork</strong> es posible que ese proyecto se actualize y nosotros avancemos paralelo a otra cosa.</p>
+					</section>
+					<section class="workflows">
+						<p>Una vez hecho el fork ahora conectamos los remotos.</p>
+						<p>Primero con el repositorio <strong>Fork</strong></p>
+						<p><strong>git remote add origin <em>[http]</em></strong></p>
+						<p>Seguimos con el siguiente remoto <strong>(El repositorio original)</strong></p>
+						<p><strong>git remote add <em>upstream</em></strong></p>
+						<p>Como vemos ya tenemos los dos remotos:</p>
+						<figure class="remotos">
+							<img src="img/remotos.png" alt="">
+						</figure>
+					</section>
+					<section class="workflows">
+						<p>Ahora tenemos que espejear las dos ramas ocultas del proyecto:</p>
+						<p><strong>git fetch <em>origin</em></strong></p>
+						<p><strong>git fetch <em>upstream</em></strong></p>
+						<p>Esto va a hacer que tomemos los ultimos cambios en:</p>
+						<ul>
+							<li>Repositorio Fork</li>
+							<li>Repositorio Original</li>
+						</ul>
+					</section>
+					<section class="workflows">
+						<p>Ya que tenemos los últimos cambios, ahora hay que darselos a nuestra rama master y así se actualize junto con los nuestros.</p>
+						<p><strong>git merge <em>origin/master</em></strong></p>
+						<p><strong>git merge <em>upstream/master</em></strong></p>
+					</section>
+					<section class="workflows">
+						<p>Ahora ya que tenemos todo en nuestro repositorio local, tenemos que pasarlo a nuestro repositorio remoto <strong>(repositorio fork)</strong> que esta en github.</p>
+						<p><strong>git push origin <em>master</em></strong></p>
+					</section>
+					<section class="workflows">
+						<h2 class="importante">importante</h2>
+						<h3>Desayuna <strong>git fetch</strong></h3>
+						<h3>Come <strong>git fetch</strong></h3>
+						<h3>Cena <strong>git fetch</strong></h3>
+					</section>
 				</section>
 				<section class="clases" data-background="#4393fa">
 					<h2>Clase 4</h2>
