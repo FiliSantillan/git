@@ -60,6 +60,12 @@
 					<p>
 						<small>Por <a href="http://filimx.github.io" target="blank">Filiberto Martínez</a> / <a href="https://twitter.com/FiliMX" target="blank">@FiliMX</a></small>
 					</p>
+					<div class="buttons">
+						<a href="#/9">Clase 2</a>
+						<a href="#/14">Clase 3</a>
+						<a href="#/17">Clase 4</a>
+						<a href="#/">Clase 5</a>
+					</div>
 				</section>
 				<section class="idea">
 					<h2>Como surgió esta idea?</h2>
@@ -737,7 +743,7 @@
 						<p><strong>git push origin <em>master</em></strong></p>
 					</section>
 					<section class="workflows">
-						<h2 class="importante">importante</h2>
+						<h2 class="aviso">importante</h2>
 						<h3>Desayuna <strong>git fetch</strong></h3>
 						<h3>Come <strong>git fetch</strong></h3>
 						<h3>Cena <strong>git fetch</strong></h3>
@@ -746,7 +752,217 @@
 				<section class="clases" data-background="#4393fa">
 					<h2>Clase 4</h2>
 					<h3>Manual Deployment + Project Management</h3>
-					<p class="proceso">Lista el 19 / Diciembre</p>
+				</section>
+				<section>
+					<section class="deployment">
+						<h2>Deployment</h2>
+					</section>
+					<section class="deployment">
+						<h3>Qué es?</h3>
+						<p>Son todas las actividades que hacen a un proyecto de software disponible para su uso, es la manera en que haces publico tus proyectos, la forma en que te mueves y los llevas al mundo.</p>
+					</section>
+				</section>
+				<section>
+					<section class="ambientes">
+						<h2>Environments (Ambientes)</h2>
+					</section>
+					<section class="ambientes">
+						<p>Hay cuatro ambientes regularmente en los equipos profesionales web.</p>
+						<ul>
+							<li>Development</li>
+							<li>Production</li>
+							<li>Testing</li>
+							<li>Staging</li>
+						</ul>
+					</section>
+					<section class="ambientes">
+						<h3>Development</h3>
+						<p>Es nuestra área local (PC, Laptop), es donde creamos código y nos pasamos horas divirtiendonos, siendo mejores profesionales.</p>
+						<figure class="f_ambientes">
+								<img src="img/goku_e3.gif" alt="goku entrenando">
+						</figure>
+					</section>
+					<section class="ambientes">
+						<h3>Production</h3>
+						<p>Es un repositorio remoto (Online, Web), puede ser en Github o algún otro servidor, es nuestro sitio final, el que le mostramos al mundo.</p>
+						<figure class="f_ambientes">
+							<img src="img/ssj.gif" alt="goku ssj">
+						</figure>
+					</section>
+					<section class="ambientes">
+						<h3>Testing</h3>
+						<p>Funciona para que nosotros generemos un test, exámenes para encontrar fallos en los códigos.</p>
+						<figure class="f_ambientes">
+							<img src="img/testing.gif" alt="gotenks fail">
+						</figure>
+					</section>
+					<section class="ambientes">
+						<h3>Staging</h3>
+						<p>Es un servidor extra básicamente, en ves de subir el proyecto a <strong>production</strong> primero pasas por staging y verificamos si todo va bien.</p>
+						<figure class="f_ambientes">
+							<img src="img/staging.gif" alt="gotenks fail">
+						</figure>
+					</section>
+				</section>
+				<section>
+					<section class="gh-pages">
+						<h2>Github Pages</h2>
+					</section>
+					<section class="gh-pages">
+						<h3>Qué es?</h3>
+						<p>Con Github Pages podemos generar un proyecto de nuestro repositorio permitiendonos mostrarlo a travez de un dominio, el unico problema es que no podemos usar backend, pero es muy util para portafolios, blogs y todo tipo de paginas del lado del frontend totalmente gratis</p>
+					</section>
+					<section class="gh-pages">
+						<p>Para ello solo tenemos que crear una nueva rama de nombre <strong>gh-pages</strong> y acoplarlo con nuestro nombre de usuario un ejemplo es esta presentación simplemente ve el url, si quieres saber más de este tema:</p>
+						<p><a href="https://pages.github.com/" target="blank">Github Pages</a></p>
+						<p><a href="https://cursos.mejorando.la/cursos/comunidad-mejorandola/concepto/programacion/crea-portafolios-con-github-pages/" target="blank">Portafolios con GitHub Pages</a></p>
+						<p>Todos los cambios y modificaciones que hagamos en la rama <strong>gh-pages</strong> se aplicaran a la pagina como tal.</p>
+					</section>
+					<section class="gh-pages">
+						<h3>Conectar por SSH</h3>
+					</section>
+					<section class="gh-pages">
+						<p>SSH es una forma segura de conectar con Github.</p>
+						<p>A diferencia de <strong>HTTP</strong> no pide el usuario y contraseña porque con SSH sabe quien eres tu.</p>
+						<figure class="f_scouter">
+							<img src="img/scouter.png" alt="">
+						</figure>
+					</section>
+					<section class="gh-pages">
+						<p>Primero hay que generar la llave:</p>
+						<p><strong>$ ssh-keygen</strong></p>
+						<p>Creara una carpeta <strong>.ssh</strong> oculta, que por lo general se encuentra en el Home.</p>
+						<p><strong>Nota:</strong> si este comando no te funciona en windows, descarga: <a href="https://github.com/msysgit/msysgit" target="blank">msysgit</a></p>
+					</section>
+					<section class="gh-pages">
+						<p>Nos movemos a esa carpeta, y dentro nos encontramos con dos archivos que nos interesan:</p>
+						<ul>
+							<li><strong>id_rsa.pub</strong> -> Llave publica, es la que le entregamos al servidor o a alguna persona.</li>
+							<li><strong>id_rsa</strong> -> Llave privada, jamas hay que perderla ni compartirla.</li>
+						</ul>
+					</section>
+					<section class="gh-pages">
+						<p>Para analizarla usamos:</p>
+						<p><strong>$ cat id_rsa.pub</strong></p>
+						<p>Esto nos mostrara un código muy raro, lo copiamos absolutamente todo.</p>
+						<p>Ahora vamos a Github / Settings / SSH keys / Add SSH Key </p>
+					</section>
+					<section class="gh-pages">
+						<p>Nos pedira un título y una llave, el título puede ser el que sea, pero en la llave pondremos lo que copiamos en la terminal.</p>
+						<p>Por ultimo damos click en Add key</p>
+						<figure class="key">
+							<img src="img/add_key.png" alt="">
+						</figure>
+					</section>
+					<section class="gh-pages">
+						<p>Nos dirijimos al repositorio remoto en github y copiamos el SSH, en la terminal nos dirijimos a nuestro proyecto local, y ejecutamos:</p>
+						<p><strong>git init</strong></p>
+						<p>Ahora hay que conectar via SSH con el repositorio remoto</p>
+						<p><strong>git remote add origin <em>[SSH]</em></strong></p>
+					</section>
+					<section class="gh-pages">
+						<p>Hacemos un git pull <strong>(fetch + merch)</strong> a la rama master</p>
+						<p><strong>git pull origin <em>master</em></strong></p>
+						<p>Pero como estamos trabajando con github pages usamos:</p>
+						<p><strong>git pull origin <em>gh-pages</em></strong></p>
+					</section>
+					<section class="gh-pages">
+						<p>Por ahora no aparece la rama <strong>gh-pages</strong> ya que esta oculta, para empezar a usarla:</p>
+						<p><strong>git checkout <em>gh-pages</em></strong></p>
+					</section>
+					<section class="gh-pages">
+						<p>Ahora si ya podemos trabajar y hacer el deployment</p>
+						<p><strong>1) Trabajar en código</strong></p>
+						<p><strong>2) git status</strong></p>
+						<p><strong>3) git add <em>-A</em></strong></p>
+						<p><strong>4) git commit -m <em>"Mensaje"</em></strong></p>
+						<p><strong>5) git push origin <em>gh-pages</em></strong></p>
+					</section>
+				</section>
+				<section>
+					<section class="manual">
+						<h2>Manual Deployment</h2>
+					</section>
+					<section class="manual">
+						<p>Bueno primero tenemos que dejar en claro que remote repository <strong>(Github)</strong> es un servidor, cuando nos conectamos a un servidor este mismo puede conectarse con otro servidor.</p>
+						<p>Esto se le conoce como infraestructura de servidores.</p>
+					</section>
+					<section class="manual">
+						<figure class="deploy">
+							<img src="img/deploy.png" alt="">
+						</figure>
+					</section>
+					<section class="manual">
+						<p>La forma correcta de autenticación es con SSH, esto dice ¿eres tu el propetario de estos tres ambientes?.</p>
+						<p>Si nosotros tenemos la llave nosotros podemos entrar a todos los candados, es decir los diferentes repositorios o servidores.</p>
+						<p>Eso basicamente es deployment</p>
+					</section>
+					<section class="manual">
+						<p>Ahora lo que tenemos que hacer es que a ese dominio o aplicación que acabamos de crear generar un repositorio con nuestra amiga la terminal.</p>
+						<figure class="terminal">
+							<img src="img/terminal.png" alt="terminal filimx">
+						</figure>
+					</section>
+					<section class="manual">
+						<p>Entramos remotamente desde la terminal al servidor.</p>
+						<p><strong>$ ssh kakaroto@web396.webfaction.com</strong></p>
+						<p>Recuerda que la dirección SSH varia segun tu servidor.</p>
+						<p>Nos dara la dirección para entrar de forma remota, esto igual depende del servidor, pero siempre nos la tiene que dar.</p>
+					</section>
+					<section class="manual">
+						<p>Ponemos nuestra contraseña, puede ser la misma o distinta a key que usamos con github.</p>
+						<p>Una vez hecho esto, ya estamos conectados de forma remota a travez de SSH</p>
+					</section>
+					<section class="manual">
+						<h3>Qué sigue ?</h3>
+						<p>Ahora tenemos que conectar la llave SSH que tenemos al servidor pero desde github y que no tenga ningun problema para mandarse información.</p>
+						<p>Esto lo logramos con:</p>
+						<p><strong>$ ssh-keygen</strong></p>
+						<p>Nuevamente nos genera una llave <a href="#/20/6">publica y privada</a></p>
+					</section>
+					<section class="manual">
+						<p>Entramos a la llave publica y nuevamente copiamos el código encriptado.</p>
+						<p>Para obtener el código recuerda usar:</p>
+						<p><strong>$ cat id_rsa.pub</strong></p>
+						<p>Vamos a Github / Settings / SSH keys / Add SSH Key</p>
+					</section>
+					<section class="manual">
+						<p>Nos pedira un título y una llave, el título puede ser el que sea, pero en la llave pondremos lo que copiamos en la terminal (Servidor).</p>
+						<p>Por ultimo damos click en Add key</p>
+						<figure class="key">
+							<img src="img/add_key.png" alt="">
+						</figure>
+					</section>
+					<section class="manual">
+						<p>¡Bien!, ya generamos una llave publica ahora con el servidor.</p>
+						<p class="aviso">Recordar que estamos conectados a un servidor externo y no a nuestro PC.</p>
+					</section>
+					<section class="deployment">
+						<p>Empecemos a conectar Github con nuestro servidor, regularmente tenemos comandos de git, en caso de que no tengamos git en el servidor, tenemos dos opciones:</p>
+						<ol>
+							<li>Que el proveedor nos los active.</li>
+							<li>Nosotros los instalemos.</li>
+						</ol>
+					</section>
+					<section class="deployment">
+						<p>Ahora si podemos empezar a traer el proyecto desde github.</p>
+						<ol>
+							<li><strong>git init</strong></li>
+							<li><strong>git remote add origin [SSH]</strong></li>
+							<li><strong>git pull origin master</strong></li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section class="gestion">
+						<h2>Gestión de Proyectos</h2>
+					</section>
+					<section class="gestion">
+						<p class="aviso">
+							Por ahora no puedo seguir con esto ya que en el vídeo de la plataforma hay un error.
+						</p>
+						<p>Cuando se logre solucionar esto, estara el contenido, te lo prometo.</p>
+					</section>
 				</section>
 				<section class="clases" data-background="#4393fa">
 					<h2>Clase 5</h2>
