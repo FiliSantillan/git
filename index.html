@@ -61,6 +61,10 @@
 						<small>Por <a href="http://filimx.github.io" target="blank">Filiberto Martínez</a> / <a href="https://twitter.com/FiliMX" target="blank">@FiliMX</a></small>
 					</p>
 					<div class="buttons">
+						<a href="#/2">Sobre mí</a>
+					</div>
+					<div class="buttons">
+						<a href="#/4">Clase 1</a>
 						<a href="#/9">Clase 2</a>
 						<a href="#/14">Clase 3</a>
 						<a href="#/17">Clase 4</a>
@@ -962,7 +966,7 @@
 							Mini-bonus por mi
 						</p>
 						<p>
-							Esta es una pequeña ayuda que proporciono ya que el video del curso tiene un error, pero básicamente hablare de lo mismo y de forma que tu lo puedas entender.
+							Esta es una pequeña ayuda que proporciono, pero básicamente hablare de lo mismo y de forma que tu lo puedas entender.
 						</p>
 					</section>
 					<section class="issues">
@@ -1114,7 +1118,163 @@
 						<p><strong>touch <em>post-commit</em></strong></p>
 						<p>Para editar usamos:</p>
 						<p><strong>vim <em>post-commit</em></strong></p>
-						<p>Dentro podemos </p>
+						<p>Dentro ponemos</p>
+						<p><strong>#!/bin/sh</strong></p>
+						<p><strong>git push origin master</strong></p>
+					</section>
+					<section class="automatic">
+						<p>Ahora ya que tenemos guardado esos comandos en <strong>post-commit</strong> hay que dar permisos:</p>
+						<p><strong>chmod +x post-commit</strong></p>
+					</section>
+					<section class="automatic">
+						<p>Listo ahora ya tenemos el hook activado solo tenemos que generar el commit:</p>
+						<p><strong>git remote add origin <em>[SSH]</em></strong></p>
+						<p><strong>git add <em>-A</em></strong></p>
+						<p><strong>git commit -m <em>"Usando hooks"</em></strong></p>
+						<p>Lo que paso es que se hace un <strong>push</strong> pero sin tener que ejecutarlo, los hooks son tus amigos y lo hacen por tí.</p>
+					</section>
+				</section>
+				<section>
+					<section class="automatic">
+						<h2>Automatic Deployment</h2>
+					</section>
+					<section class="automatic">
+						<p>Básicamente un Automatic Deployment es un manual deployment pero automatizado.</p>
+					</section>
+					<section class="automatic">
+						<p>Primero hay que crear nuestra llave SSH dentro de nuestro servidor.</p>
+						<p><strong>ssh-keygen</strong></p>
+						<p>La obtenemos con:</p>
+						<p><strong>cat id_rsa.pub</strong></p>
+						<p>La copiamos y vamos a Github / settings/ add SSH key / agregamos llave</p>
+						<p>De esta forma logramos conectar el servidor con Github.</p>
+					</section>
+					<section class="automatic">
+						<p class="aviso">Antes de empezar con lo siguiente tenemos que lograr conectar el <strong>Local Repository</strong> con <strong>Github</strong> vía SSH</p>
+						<p>Nosotros ya sabemos hacer eso así ¡que que esperan! :D </p>
+					</section>
+					<section class="automatic">
+						<h3>1) Creamos carpeta</h3>
+						<p><strong>mkdir portafolio</strong></p>
+						<p><strong>git init</strong></p>
+						<p><strong>git remote add origin <em>[SSH]</em></strong></p>
+						<p><strong>git remote -v</strong></p>
+					</section>
+					<section class="automatic">
+						<h3>2) Jalamos archivos (si es necesario)</h3>
+						<p><strong>git pull origin <em>master</em></strong></p>
+					</section>
+					<section class="automatic">
+						<h3>3) Creamos archivo .gitignore & deploy.sh</h3>
+						<p>Nota: El archivo <strong>.gitignore</strong> lo que va hacer es no tomar los archivos .sh del repositorio.</p>
+						<p><strong>touch .gitignore</strong></p>
+						<p><strong>vim .gitignore</strong></p>
+						<p>Dentro de .gitignore ponemos: <strong>*.sh</strong></p>
+						<p><strong>touch deploy.sh</strong></p>
+					</section>
+					<section class="automatic">
+						<h3>4) Generamos Cambios</h3>
+						<p>Lo que haremos es editar nuestro <strong>index.html</strong></p>
+						<figure class="cambios">
+							<img src="img/cambios.png" alt="">
+						</figure>
+					</section>
+					<section class="automatic">
+						<h3>5) Creamos el Git HOOK y lo llenamos</h3>
+						<p><strong>cd .git/hooks</strong></p>
+						<p><strong>touch post-commit</strong></p>
+						<p><strong>vim post-commit</strong></p>
+						<p>Dentro de post-commit:</p>
+						<p><strong>#!/bin/sh</strong></p>
+						<p><strong>git push origin <em>master</em></strong></p>
+						<p><strong>ssh miguelnieva@web396.webfaction.com 'bash -s' < deploy.sh</strong></p>
+					</section>
+					<section class="automatic">
+						<h3>6) Autorizamos el Git Hook</h3>
+						<p><strong>chmod +x post-commit</strong></p>
+					</section>
+					<section class="automatic">
+						<h3>7) Llenamos los comandos que se ejecutatan en servidor (deploy.sh)</h3>
+						<p><strong>cd ../..</strong></p>
+						<p><strong>vim deploy.sh</strong></p>
+						<p>Dentro de deply ponemos lo siguiente:</p>
+						<p><strong>#!/bin/sh</strong></p>
+						<p><strong>cd ~/webapps/portafolio</strong> -> Según tu servidor</p> 
+						<p><strong>git init</strong></p>
+						<p><strong>git remote add origin <em>[SSH]</em></strong></p>
+						<p><strong>git pull origin <em>master</em></strong></p>
+					</section>
+					<section class="automatic">
+						<h3>Ahora probamos</h3>
+						<p><strong>git status</strong></p>
+						<p><strong>git add <em>-A</em></strong></p>
+						<p><strong>git commit -m <em>"Deploy 1"</em></strong></p>
+					</section>
+					<section class="automatic">
+						<h3>Lo que va a pasar es lo siguiente:</h3>
+						<ol>
+							<li>Empieza a funsionar el Hook</li>
+							<li>Hace el commit y el push</li>
+							<li>Nos pidde la contraseña del área del servidor</li>
+						</ol>
+						<p class="aviso margin-top">¡Listo! ya hicimos deployment automático</p>
+					</section>
+				</section>
+				<section>
+					<section class="total">
+						<h2>Deploy total en server</h2>
+					</section>
+					<section class="total">
+						<p>Si por alguna circustancia extrema, no podemos usar Github, existen los <strong>"bare respositories"</strong>, que no son más que repositorios limpios, envian y reciben contenido.</p>
+						<p>Un <strong>bare repository</strong> unicamente guarda el historial de cambios, con todos sus archivos, pero no puedes editarlos.</p>
+						<p class="aviso">Un bare repository ¡¡¡jamás se toca!!!</p>
+					</section>
+					<section class="total">
+						<p>Primero creamos nuestras dos carpetas o aplicaciones en servidor.</p>
+						<ul>
+							<li><strong>gitcentral</strong> -> Guarda todos nuestros repositorios "bare" y solo va a recibir/enviar información.</li>
+							<li><strong>deployserver</strong> -> Mostrara nuestro resultado, ya pasando por el "bare".</li>
+						</ul>
+					</section>
+					<section class="total">
+						<p>Entramos a nuestro servidor via SHH <strong>(Ya sabemos como)</strong> y borramos los index.html que tienen.</p>
+						<p>Ahora lo se hara es lo siguiente: normal repository <strong>(local)</strong> suba cambios al <strong>bare repository </strong> y que normal repository <strong>(server)</strong> reciba esos cambios.</p>
+						<p class="uppercase">Empecemos</p>
+					</section>
+					<section class="total">
+						<h3>Local</h3>
+						<p>Creamos nuestra carpeta y un archivo index.html</p>
+						<p><strong>mkdir proyecto</strong></p>
+						<p><strong>touch index.html</strong></p>
+						<p>Editamos nuestro index</p>
+						<p><strong>vim index.html</strong></p>
+						<p>Creamos el commit</p>
+						<p><strong>git init</strong></p>
+						<p><strong>git status</strong></p>
+						<p><strong>git add <em>-A</em></strong></p>
+						<p><strong>git commit -m <em>"Commit 1"</em></strong></p>
+					</section>
+					<section class="total">
+						<h3>Servidor (Bare repository)</h3>
+						<p>Entramos al servidor vía SSH y nos movemos hasta la carpeta</p>
+						<p><strong>ssh goku@web396.webfaction.com</strong></p>
+						<p><strong>cd/webapps/gitcentral</strong></p>
+						<p>Ejecutamos git init</p>
+						<p><strong>git init --bare --share</strong></p>
+						<p><strong>--bare</strong> -> Porque este repositorio va a ser un "bare".</p>
+						<p><strong>--share</strong> -> Para que lo puedan pushear diferentes usuarios.</p>
+					</section>
+					<section class="total">
+						<h3>Local</h3>
+						<p>Ahora tenemos que subirlo al servidor directamente, y mandamos cambios:</p>
+						<p><strong>git remote add origin goku@web396.webfaction.com<em>:home/goku/webapps/gitcentral</em></strong></p>
+						<p><strong>git push origin <em>master</em></strong></p>
+					</section>
+					<section class="total">
+						<h3>Servidor (normal repository)</h3>
+						<p><strong>git init</strong></p>
+						<p><strong>git remote add origin <em>../gitcentral</em></strong></p>
+						<p><strong>git pulls origin <em>master</em></strong></p>
 					</section>
 				</section>
 			</div>
@@ -1125,6 +1285,7 @@
 		<script src="lib/js/retina.min.js"></script>
 
 		<script>
+
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -1132,11 +1293,14 @@
 				progress: true,
 				history: true,
 				center: true,
+
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
+
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
