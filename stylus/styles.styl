@@ -13,19 +13,15 @@ header
 	overflow hidden
 	
 .controls
+	animation 1s parpadeo_navigation 3
 	.navigate-right
 		border-left-color black !important
-		animation 1s parpadeo_navigation 3
-		
 	.navigate-left
 		border-right-color black !important
-		animation 1s parpadeo_navigation 3
 	.navigate-up
 		border-bottom-color black !important
-		animation 1s parpadeo_navigation 3
 	.navigate-down
 		border-top-color black !important
-		animation 1s parpadeo_navigation 3
 	
 .buttons
 	margin-top 1.5em
@@ -221,7 +217,7 @@ section
 			
 @keyframes parpadeo_navigation
 	40%
-		transform scale(2)
+		transform scale(1.5)
 		
 	20% 60%
 		transform scale(1)
