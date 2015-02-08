@@ -1,4 +1,5 @@
 @import 'nib/vendor'
+@import 'fonts.styl'
 
 azulito = #4393fa
 grisesito = #2c2c2c
@@ -78,14 +79,26 @@ header
 		&:nth-child(3)
 			top 4.2em
 			right 0.5em
-						
+
+.home_init
+	a
+		position absolute
+		top 0.9em
+		left 4.4em
+		font-size 2em
+		text-decoration none
+		color white
+		&:hover
+			color azulito
+		strong
+			display none
 .yo
 	.f_yo
 		img
 			border-radius 50%
 			border 4px solid grisesito
 			
-	.social_icons
+.social_icons
 		width 392px
 		position relative
 		margin 0 auto
@@ -256,6 +269,18 @@ section
 		
 		.largo
 			display block
+			
+
+	.home_init
+		a
+			position absolute
+			top 0.9em
+			left 9.7em
+			font-size 2em
+			text-decoration none
+			color white
+			&:hover
+				color azulito
 
 		
 		
