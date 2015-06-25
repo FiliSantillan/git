@@ -64,7 +64,7 @@ header
 
 .share
 	iframe
-		position absolute
+		position absolute !important
 		width 75px
 		height 20px
 		
@@ -79,6 +79,7 @@ header
 		&:nth-child(3)
 			top 4.2em
 			right 0.5em
+			
 
 .home_init
 	a
@@ -223,7 +224,7 @@ header
 	text-transform uppercase
 		
 			
-section	
+section
 	strong
 		em
 			color #fa3c99
@@ -232,17 +233,18 @@ section
 	40%
 		transform scale(1.5)
 		
-	20% 60%
+	20%	
+	60%
 		transform scale(1)
 		
 @keyframes parpadeo
 	40%
 		transform scale(1.1)
 		
-	20% 60%
+	20% 
+	60%
 		transform scale(0.8)
 		
-
 @media screen and (min-width: 767px)
 	.share
 		iframe
